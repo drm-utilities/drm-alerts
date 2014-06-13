@@ -3,30 +3,27 @@
 ###############################################################################
 "use strict"
 
-( ($) ->
-    class window.DrmModalAlert
-        constructor: (@alertClass = "drm-modal-alert", @speed = 300) ->
-            self = @                
+class @DrmModalAlert
+    constructor: (@alertClass = "drm-modal-alert", @speed = 300) ->
+        self = @
 
-            $('html').on 'click', "div.#{@alertClass} button.close", -> self.clearAlert.call @, self.speed
+        $('html').on 'click', "div.#{@alertClass} button.close", -> self.clearAlert.call @, self.speed
 
-        showAlert: (type, message, holder) ->
-            className = "drm-#{type}-alert #{@alertClass}"
-            newAlert = $ '<div></div>',
-                text: message,
-                class: className
+    showAlert: (type, message, holder) ->
+        className = "drm-#{type}-alert #{@alertClass}"
+        newAlert = $ '<div></div>',
+            text: message,
+            class: className
 
-            close = $ '<button></button>',
-                text: 'x'
-                class: 'close'
+        close = $ '<button></button>',
+            text: 'x'
+            class: 'close'
 
-            newAlert.prependTo holder
-            close.prependTo newAlert
+        newAlert.prependTo holder
+        close.prependTo newAlert
 
-        clearAlert: (speed) -> 
-            $(@).parent().fadeOut speed, ->
-                $(@).remove()
+    clearAlert: (speed) -> 
+        $(@).parent().fadeOut speed, ->
+            $(@).remove()
 
-    new DrmModalAlert()
-
-) jQuery
+new DrmModalAlert()
