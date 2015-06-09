@@ -1,0 +1,31 @@
+{
+  "name": "elr-alerts",
+  "version": "1.0.0",
+  "homepage": "https://github.com/elr-utilities/elr-alerts",
+  "authors": [
+    "Elizabeth Rogers <beth@elizabeth-rogers.com>"
+  ],
+  "description": "Javascript Alerts",
+  "main": "dist/elr-alerts.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "alerts",
+    "jquery",
+    "javascript",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
