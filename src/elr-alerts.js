@@ -1,33 +1,36 @@
-(function($) {
-    window.elrAlerts = function(params) {
-        var self = {};
-        var spec = params || {};
-        var speed = spec.speed || 300;
-        var alertClass = spec.alertClass || 'elr-dismissible-alert';
+import elrUtlities from 'elr-utilities';
+const $ = require('jquery');
 
-        self.showAlert = function(type, message, $holder) {
-            var className = 'elr-' + type + '-alert ' + alertClass,
-                $newAlert = $('<div></div>', {
-                    text: message,
-                    'class': className
-                }),
+let elr = elrUtlities();
 
-                $close = $('<button></button>', {
-                    text: 'x',
-                    'class': 'close'
-                });
+const elrAlerts = function({
+    speed = 300,
+    alertClass = 'js-dismissible-alert'
+} = {}) {
+    const self = {
+        showAlert(type, message, $holder) {
+            const className = `elr-alert elr-${type}-alert ${alertClass}`;
+            const $newAlert = elr.createElement('div', {
+                text: message,
+                'class': className
+            });
+
+            const $close = $('<button></button>', {
+                text: 'x',
+                'class': 'close'
+            });
 
             $newAlert.prependTo($holder);
             $close.prependTo($newAlert);
-        };
-
-        $('body').on('click', '.' + alertClass + ' button.close', function(e) {
-            var $alert = $(this).parent();
-            
-            elr.clearElement($alert, speed);
-            e.preventDefault();
-        });
-
-        return self;
+        }
     };
-})(jQuery);
+
+    $('body').on('click', `.${alertClass} button.close`, function(e) {
+        e.preventDefault();
+        elr.clearElement($(this).parent(), speed);
+    });
+
+    return self;
+};
+
+export default elrAlerts;
