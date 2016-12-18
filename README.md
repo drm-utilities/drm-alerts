@@ -1,4 +1,4 @@
-# elr-alerts 
+# elr-alerts
 
 alerts
 
@@ -15,7 +15,7 @@ npm install elr-alerts --save
 ## Dependencies
 
 - [babel-runtime](https://github.com/babel/babel/tree/master/packages): babel selfContained runtime
-- [elr-utility-lib](https://github.com/Beth3346/elr-utility-lib): JavaScript Utility Library
+- [elr-ui](https://github.com/Beth3346/elr-ui): JavaScript Utility Library
 - [jquery](https://github.com/jquery/jquery): JavaScript library for DOM operations
 
 ## Dev Dependencies
