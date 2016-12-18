@@ -1,7 +1,7 @@
-import elrUtlities from 'elr-utility-lib';
+import elrUI from 'elr-ui';
 const $ = require('jquery');
 
-let elr = elrUtlities();
+let ui = elrUI();
 
 const elrAlerts = function({
     speed = 300,
@@ -10,7 +10,7 @@ const elrAlerts = function({
     const self = {
         showAlert(type, message, $holder) {
             const className = `elr-alert elr-${type}-alert ${alertClass}`;
-            const $newAlert = elr.createElement('div', {
+            const $newAlert = ui.createElement('div', {
                 text: message,
                 'class': className
             });
@@ -27,7 +27,7 @@ const elrAlerts = function({
 
     $('body').on('click', `.${alertClass} button.close`, function(e) {
         e.preventDefault();
-        elr.clearElement($(this).parent(), speed);
+        ui.clearElement($(this).parent(), speed);
     });
 
     return self;
