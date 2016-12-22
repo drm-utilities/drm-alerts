@@ -8,24 +8,29 @@ const elrAlerts = function({
     alertClass = 'js-dismissible-alert'
 } = {}) {
     const self = {
-        showAlert(type, message, $holder) {
+        createAlert(type, message) {
             const className = `elr-alert elr-${type}-alert ${alertClass}`;
-            const $newAlert = ui.createElement('div', {
+            return ui.createElement('div', {
                 text: message,
                 'class': className
             });
-
-            const $close = $('<button></button>', {
+        },
+        createCloseButton() {
+            return ui.createElement('button', {
                 text: 'x',
-                'class': 'close'
+                'class': 'close js-close-alert'
             });
+        },
+        showAlert(type, message, $holder) {
+            const $newAlert = this.createAlert(type, message);
+            const $close = this.createCloseButton();
 
             $newAlert.prependTo($holder);
             $close.prependTo($newAlert);
         }
     };
 
-    $('body').on('click', `.${alertClass} button.close`, function(e) {
+    $('body').on('click', `.${alertClass} button.js-close-alert`, function(e) {
         e.preventDefault();
         ui.clearElement($(this).parent(), speed);
     });
