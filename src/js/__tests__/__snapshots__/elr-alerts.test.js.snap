@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`showAlert should display an alert 1`] = `"<button class=\\"close js-close-alert\\">x</button><p class=\\"elr-alert-message\\">this is a test</p>"`;
