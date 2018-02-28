@@ -39,21 +39,21 @@ describe('showAlert', () => {
     const message = 'danger! danger!! danger!!!'
     alerts.showAlert('danger', message, $('.elr-alert-holder'))
 
-    expect($('.elr-danger-alert p').text()).toBe(message)
+    expect($('.elr-alert-danger p').text()).toBe(message)
   })
   it('should have a close button', () => {
     alerts.showAlert('danger', 'a message', $('.elr-alert-holder'))
-    expect($('.elr-danger-alert').find('button.close').length).toBe(1)
+    expect($('.elr-alert-danger').find('button.close').length).toBe(1)
   })
   it('should remove alert when close is clicked', done => {
     alerts.showAlert('danger', 'a message', $('.elr-alert-holder'))
 
-    $('.elr-danger-alert')
+    $('.elr-alert-danger')
       .find('.js-close-alert')
       .click()
 
     setTimeout(() => {
-      expect($('.elr-danger-alert').length).toBe(0)
+      expect($('.elr-alert-danger').length).toBe(0)
       done()
     }, 1000)
   })

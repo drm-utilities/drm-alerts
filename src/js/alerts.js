@@ -2,7 +2,7 @@ import $ from 'jquery'
 ;('use strict')
 
 const createAlert = (type, message) => {
-  const className = `elr-alert elr-${type}-alert js-dismissible-alert`
+  const className = `elr-alert elr-alert-${type} js-dismissible-alert`
   return $('<div></div>', {
     html: `<p class="elr-alert-message">${message}</p>`,
     class: className
