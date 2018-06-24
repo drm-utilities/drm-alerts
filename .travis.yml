@@ -5,3 +5,6 @@ before_script:
   - npm install
   - npx webpack
 after_success:
+notifications:
+    slack: wildfirepublicity:Lw0t3aIPsbkmGhdO6TLc9wOA
+
