@@ -18,7 +18,8 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build": "npx webpack --mode='production'"
   },
   "devDependencies": {
     "css-loader": "^0.28.10",
