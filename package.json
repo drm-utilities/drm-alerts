@@ -8,7 +8,9 @@
     "email": "beth3346@gmail.com"
   },
   "homepage": "http://www.elizabeth-rogers.com/elr-utilities/js-alerts.html",
-  "keywords": ["javascript, jquery, alerts, ui"],
+  "keywords": [
+    "javascript, jquery, alerts, ui"
+  ],
   "license": "MIT",
   "main": "dist/main.js",
   "repository": {
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "css-loader": "^0.28.10",
+    "husky": "^1.0.0-rc.9",
     "jest": "^22.4.2",
     "style-loader": "^0.20.2",
     "webpack": "^4.0.0",
@@ -32,5 +35,10 @@
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.26.0",
     "jquery": "^3.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && yarn test"
+    }
   }
 }
