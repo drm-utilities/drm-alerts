@@ -20,7 +20,7 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "test": "jest",
-    "tdd": "jest --watch",
+    "tdd": "jest --watch --notify",
     "build": "npx webpack --mode='production'"
   },
   "devDependencies": {
